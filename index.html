@@ -5,504 +5,225 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Europe Trip 2026 · Tracker</title>
-<style>
-  :root { --bg:#f4f9fd; --ink:#152230; --primary:#1fa1ff; --primary-dark:#0772c0; --secondary:#0b5786; --sand:#dde9f3; --slate:#4a5b6e; --rule:#c2d4e3; --accent:#0fb5c0; --gold:#d18b1f; --green:#1b7a3e; --amber:#c68514; --red:#b8453a; }
-  * { box-sizing: border-box; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); margin:0; line-height:1.55; -webkit-font-smoothing:antialiased; }
-  .container { max-width:760px; margin:0 auto; padding:20px 16px 60px; }
-  header.cover { background:linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color:#fff; padding:32px 22px; border-radius:12px; margin-bottom:18px; }
-  header.cover h1 { font-size:24px; margin:0 0 4px; letter-spacing:-0.01em; }
-  header.cover .sub { font-size:13px; opacity:0.94; margin:0; }
-  header.cover .stats { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin-top:16px; }
-  header.cover .stat { background:rgba(255,255,255,0.18); padding:8px 10px; border-radius:6px; text-align:center; }
-  header.cover .stat .n { font-size:22px; font-weight:700; line-height:1; }
-  header.cover .stat .l { font-size:10px; opacity:0.9; text-transform:uppercase; letter-spacing:0.05em; margin-top:2px; }
-  details.leg { background:#fff; border:1px solid var(--rule); border-radius:8px; padding:0; margin:8px 0; box-shadow:0 1px 2px rgba(0,0,0,0.04); }
-  details.leg.locked { border-left:4px solid var(--green); }
-  details.leg.decided { border-left:4px solid var(--amber); }
-  details.leg.open { border-left:4px solid var(--red); }
-  details.leg.free { border-left:4px solid var(--accent); }
-  details.leg summary { cursor:pointer; padding:12px 14px; list-style:none; display:flex; align-items:flex-start; gap:10px; padding-right:32px; position:relative; }
-  details.leg summary::-webkit-details-marker { display:none; }
-  details.leg summary::after { content:'+'; position:absolute; right:14px; top:12px; color:var(--primary); font-weight:400; font-size:20px; line-height:1; }
-  details.leg[open] summary::after { content:'−'; }
-  .leg-icon { font-size:18px; flex:none; line-height:1.2; }
-  .leg-main { flex:1; min-width:0; }
-  .leg-date { font-size:11px; color:var(--slate); text-transform:uppercase; letter-spacing:0.06em; font-weight:600; margin-bottom:2px; }
-  .leg-title { font-size:15px; font-weight:600; line-height:1.3; color:var(--ink); }
-  .leg-meta { font-size:12px; color:var(--slate); margin-top:3px; }
-  .badge { display:inline-block; font-size:10px; padding:2px 7px; border-radius:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-left:6px; vertical-align:middle; }
-  .badge.locked { background:var(--green); color:#fff; }
-  .badge.decided { background:var(--amber); color:#fff; }
-  .badge.open { background:var(--red); color:#fff; }
-  .badge.free { background:var(--accent); color:#fff; }
-  details.leg .body { padding:0 14px 14px; border-top:1px solid var(--rule); margin-top:0; }
-  details.leg .body h4 { font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--slate); margin:14px 0 4px; }
-  details.leg .body p { margin:6px 0; font-size:14px; }
-  details.leg .body ul { margin:4px 0; padding-left:18px; font-size:14px; }
-  details.leg .body ul li { margin-bottom:3px; }
-  .option { background:var(--bg); border:1px solid var(--rule); border-radius:6px; padding:10px 12px; margin:6px 0; }
-  .option .opt-title { font-size:14px; font-weight:600; margin:0; }
-  .option .opt-title .star { color:var(--primary); }
-  .option .opt-meta { font-size:12px; color:var(--slate); margin:2px 0 4px; }
-  .option .opt-price { font-size:14px; font-weight:700; color:var(--primary-dark); margin:0 0 6px; }
-  .option a.book { display:inline-block; background:var(--primary); color:#fff !important; text-decoration:none; padding:5px 10px; border-radius:4px; font-size:12px; font-weight:600; }
-  .option a.book:hover { background:var(--primary-dark); }
-  .locked-detail { background:#e8f5ec; border-left:3px solid var(--green); padding:10px 12px; border-radius:0 4px 4px 0; margin:8px 0; font-size:13px; }
-  .locked-detail strong { color:var(--green); }
-  .free-note { background:#e0f5f7; border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 4px 4px 0; margin:8px 0; font-size:13px; }
-  footer.foot { font-size:11px; color:var(--slate); margin-top:30px; padding-top:14px; border-top:1px solid var(--rule); text-align:center; }
-  footer.foot code { background:var(--sand); padding:1px 5px; border-radius:3px; font-size:11px; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Europe 2026">
+<meta name="theme-color" content="#0772c0">
+<title>Europe 2026 · Trip Planner</title>
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div class="container">
 
-<header class="cover">
-  <h1>Europe Trip · Summer 2026</h1>
-  <p class="sub">Jul 18 → Aug 15 · 28 nights · 4 adults + 1 child · Updated by Morgan</p>
-  <div class="stats">
-    <div class="stat"><div class="n">1</div><div class="l">Locked</div></div>
-    <div class="stat"><div class="n">1</div><div class="l">Decided</div></div>
-    <div class="stat"><div class="n">7</div><div class="l">Free</div></div>
-    <div class="stat"><div class="n">9</div><div class="l">Open</div></div>
+<header class="appbar">
+  <div class="appbar-inner">
+    <div style="flex:1;">
+      <div class="appbar-title">Europe 2026</div>
+      <div class="appbar-sub">Jul 18 → Aug 15 · 28 nights</div>
+    </div>
   </div>
 </header>
 
-<p style="font-size:13px; color:var(--slate); margin:14px 0;"><strong>Legend:</strong> <span class="badge locked">Locked</span> booked · <span class="badge decided">Decided</span> chosen, not booked · <span class="badge open">Open</span> shortlist below · <span class="badge free">Free</span> sister's/parents' place</p>
+<div class="container">
 
-<!-- LEG 1 -->
-<details class="leg locked">
-  <summary>
-    <span class="leg-icon">✈️</span>
-    <div class="leg-main">
-      <div class="leg-date">Sat Jul 18</div>
-      <div class="leg-title">YOW → CDG · Air France AF327 <span class="badge locked">Locked</span></div>
-      <div class="leg-meta">Direct overnight · dep 5:25 PM Ottawa</div>
+  <section class="hero">
+    <h1>Family Europe Trip</h1>
+    <p class="sub">4 adults + 1 child · Tap any leg for details</p>
+    <div class="stats">
+      <div class="stat"><div class="n">18</div><div class="l">Legs</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Locked</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">Open</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Free</div></div>
     </div>
-  </summary>
-  <div class="body">
-    <div class="locked-detail">
-      <strong>Booked.</strong> Air France direct, AF327, dep YOW 5:25 PM, arrives CDG ~6:00 AM next morning. Standard Economy fare with checked bags. Total C$ 6,859.60 for 5 pax. Round-trip ticket — return Aug 15 included.
-    </div>
-    <h4>What I need from you to fully lock</h4>
-    <p>Send me the PNR (6-letter Air France confirmation code) and I'll add it here for quick reference.</p>
+  </section>
+
+  <div class="section-h">France</div>
+  <div class="leg-list">
+    <a class="leg-card locked" href="leg/01.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">✈️</span> Sat Jul 18 <span class="badge locked">Locked</span></div>
+        <div class="title">YOW → Paris CDG</div>
+        <div class="meta">Air France AF327 direct overnight</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card free" href="leg/02.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏛️</span> Sat Jul 18 – Tue Jul 21 <span class="nights">· 2 nights</span> <span class="badge free">Free</span></div>
+        <div class="title">Paris @ sister's</div>
+        <div class="meta">Recover · acclimatize · short Paris sampler</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
   </div>
-</details>
 
-<!-- LEG 2 -->
-<details class="leg free">
-  <summary>
-    <span class="leg-icon">🏛️</span>
-    <div class="leg-main">
-      <div class="leg-date">Sat Jul 18 evening – Tue Jul 21 · 2 nights</div>
-      <div class="leg-title">Paris @ sister's house <span class="badge free">Free</span></div>
-      <div class="leg-meta">Recover from overnight flight · acclimatize · pre-Iberia decompression</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="free-note">
-      <strong>Free stay</strong> at your sister's. No booking needed. She lives in central Paris — gives you 2 quick days of recovery before flying to Portugal.
-    </div>
+  <div class="section-h">Portugal</div>
+  <div class="leg-list">
+    <a class="leg-card open" href="leg/03.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">✈️</span> Tue Jul 21 <span class="badge open">Open</span></div>
+        <div class="title">Paris ORY → Faro</div>
+        <div class="meta">Transavia direct · 2h35 · ~C$ 1,125 for 5</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/04.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏖️</span> Tue Jul 21 – Sun Jul 26 <span class="nights">· 5 nights</span> <span class="badge open">Open</span></div>
+        <div class="title">Lagos, Algarve</div>
+        <div class="meta">Cove beaches · Ponta da Piedade · Sagres</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/05.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🚆</span> Sun Jul 26 <span class="badge open">Open</span></div>
+        <div class="title">Train Lagos → Setúbal</div>
+        <div class="meta">via Lisbon · ~5h · CP Comboios</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/06.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🌊</span> Sun Jul 26 – Wed Jul 29 <span class="nights">· 3 nights</span> <span class="badge open">Open</span></div>
+        <div class="title">Setúbal / Arrábida</div>
+        <div class="meta">Galapinhos · Arrábida park · Sado dolphins</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/07.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🚆</span> Wed Jul 29 <span class="badge open">Open</span></div>
+        <div class="title">Train Setúbal → Cascais</div>
+        <div class="meta">via Lisbon · ~1h30</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/08.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏛️</span> Wed Jul 29 – Sat Aug 1 <span class="nights">· 3 nights</span> <span class="badge open">Open</span></div>
+        <div class="title">Cascais (Sintra coast)</div>
+        <div class="meta">Sintra UNESCO · Cabo da Roca · wild beaches</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/09.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">✈️</span> Sat Aug 1 <span class="badge open">Open</span></div>
+        <div class="title">Lisbon → Paris ORY</div>
+        <div class="meta">TAP direct · 2h25 · ~C$ 1,240 for 5</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
   </div>
-</details>
 
-<!-- LEG 3 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">✈️</span>
-    <div class="leg-main">
-      <div class="leg-date">Tue Jul 21</div>
-      <div class="leg-title">Paris ORY → FAO Faro <span class="badge open">Open</span></div>
-      <div class="leg-meta">Direct flight ~2h35 · Transavia · 5 pax</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Recommended</h4>
-    <div class="option">
-      <p class="opt-title"><span class="star">★</span> Transavia France direct · ORY → FAO</p>
-      <p class="opt-meta">8:55pm → 10:35pm · 2h35 nonstop · Economy basic (no checked bags)</p>
-      <p class="opt-price">~C$ 1,125 total for 5 pax</p>
-      <a class="book" href="https://www.transavia.com/" target="_blank">Book on Transavia</a>
-      <a class="book" href="https://www.ca.kayak.com/flights/ORY-FAO/2026-07-21/4adults/children-11?sort=price_a" target="_blank" style="background:var(--secondary);">Compare on Kayak</a>
-    </div>
-    <h4>To verify before booking</h4>
-    <ul>
-      <li>Does AF have a CDG-LIS direct option that day? (Kayak said no — but worth a double-check on AF.ca)</li>
-      <li>Standard fare upgrade for checked bags (~+C$ 400 for the family)</li>
-    </ul>
+  <div class="section-h">France · Pivot</div>
+  <div class="leg-list">
+    <a class="leg-card free" href="leg/10.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏛️</span> Sat Aug 1 – Mon Aug 3 <span class="nights">· 2 nights</span> <span class="badge free">Free</span></div>
+        <div class="title">Paris @ sister's</div>
+        <div class="meta">Decompress between Iberia and Poland</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
   </div>
-</details>
 
-<!-- LEG 4 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">🏖️</span>
-    <div class="leg-main">
-      <div class="leg-date">Tue Jul 21 – Sun Jul 26 · 5 nights</div>
-      <div class="leg-title">Lagos, Algarve · cove beaches base <span class="badge open">Open</span></div>
-      <div class="leg-meta">Praia Dona Ana · Ponta da Piedade kayak · Sagres day trip</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Airbnb shortlist · live-verified for these dates</h4>
-    <div class="option">
-      <p class="opt-title"><span class="star">★</span> Sea Apartment, Praia da Luz</p>
-      <p class="opt-meta">3 BR · 4 beds · 3 baths · Guest favorite · 4.94★</p>
-      <p class="opt-price">C$ 2,225 · 5 nights (best value)</p>
-      <a class="book" href="https://www.airbnb.com/rooms/1217258619258344555?check_in=2026-07-21&check_out=2026-07-26&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Apt SeaBreeze — brand new, sea views</p>
-      <p class="opt-meta">3 BR · 4 beds · 2 baths · Guest favorite · 4.8★</p>
-      <p class="opt-price">C$ 2,447 · 5 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/35396636?check_in=2026-07-21&check_out=2026-07-26&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Vibrant Marina Luxury Apartment · Lagos Old Town</p>
-      <p class="opt-meta">3 BR · 4 beds · 3 baths · Superhost</p>
-      <p class="opt-price">C$ 2,778 · 5 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/1682620627295012497?check_in=2026-07-21&check_out=2026-07-26&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Casa Laurete — luxury family villa (premium)</p>
-      <p class="opt-meta">3 BR · 3 beds · 4 baths · 4.92★ · Guest favorite</p>
-      <p class="opt-price">C$ 4,617 · 5 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/898402825081115818?check_in=2026-07-21&check_out=2026-07-26&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
+  <div class="section-h">Poland</div>
+  <div class="leg-list">
+    <a class="leg-card open" href="leg/11.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">✈️</span> Mon Aug 3 <span class="badge open">Open</span></div>
+        <div class="title">Paris CDG → Kraków</div>
+        <div class="meta">AF or easyJet direct · then drive to Zakopane</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card decided" href="leg/12.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏔️</span> Mon Aug 3 – Fri Aug 7 <span class="nights">· 4 nights</span> <span class="badge decided">Decided</span></div>
+        <div class="title">Zakopane · Aries Hotel &amp; SPA</div>
+        <div class="meta">Tatra mountains · Krupówki · Morskie Oko</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card free" href="leg/13.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏠</span> Fri Aug 7 – Sun Aug 9 <span class="nights">· 2 nights</span> <span class="badge free">Free</span></div>
+        <div class="title">Buchnik @ parents · 80+90 party Aug 8</div>
+        <div class="meta">Wieslawa's parents · N of Warsaw</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card open" href="leg/14.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">⛵</span> Sun Aug 9 – Thu Aug 13 <span class="nights">· 4 nights</span> <span class="badge open">Open</span></div>
+        <div class="title">Mazury sailing · group of 15</div>
+        <div class="meta">4 families · cost split ÷3</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card free" href="leg/15.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏠</span> Thu Aug 13 – Fri Aug 14 <span class="nights">· 1 night</span> <span class="badge free">Free</span></div>
+        <div class="title">Buchnik @ parents · return leg</div>
+        <div class="meta">Pit-stop before WAW flight</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
   </div>
-</details>
 
-<!-- LEG 5 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">🚆</span>
-    <div class="leg-main">
-      <div class="leg-date">Sun Jul 26</div>
-      <div class="leg-title">Train Lagos → Setúbal (via Lisbon) <span class="badge open">Open</span></div>
-      <div class="leg-meta">~5h with one change · CP Comboios de Portugal · ~€80 for 5</div>
-    </div>
-  </summary>
-  <div class="body">
-    <p>Lagos → Tunes (regional, 30min) · Tunes → Lisbon Oriente (Alfa Pendular, 2h45) · Lisbon Roma-Areeiro → Setúbal (Fertagus, 50min)</p>
-    <a class="book" href="https://www.cp.pt/passageiros/en" target="_blank">Book on CP Comboios de Portugal</a>
-    <p style="margin-top:8px; font-size:12px; color:var(--slate);">Tip: book 1–2 months ahead for early-bird Alfa Pendular fares.</p>
+  <div class="section-h">Home</div>
+  <div class="leg-list">
+    <a class="leg-card open" href="leg/16.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">✈️</span> Fri Aug 14 <span class="badge open">Open</span></div>
+        <div class="title">Warsaw → Paris CDG</div>
+        <div class="meta">AF or LOT direct · ~2h35</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card free" href="leg/17.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">🏛️</span> Fri Aug 14 – Sat Aug 15 <span class="nights">· 1 night</span> <span class="badge free">Free</span></div>
+        <div class="title">Paris @ sister's · final night</div>
+        <div class="meta">Repack · last walks</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
+    <a class="leg-card locked" href="leg/18.html">
+      <div class="stripe"></div>
+      <div class="body">
+        <div class="row1"><span class="icon">✈️</span> Sat Aug 15 <span class="badge locked">Locked</span></div>
+        <div class="title">Paris CDG → YOW</div>
+        <div class="meta">Air France direct · part of round-trip ticket</div>
+      </div>
+      <div class="chev">›</div>
+    </a>
   </div>
-</details>
 
-<!-- LEG 6 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">🌊</span>
-    <div class="leg-main">
-      <div class="leg-date">Sun Jul 26 – Wed Jul 29 · 3 nights</div>
-      <div class="leg-title">Setúbal / Arrábida Natural Park <span class="badge open">Open</span></div>
-      <div class="leg-meta">Galapinhos beach · limestone cliff hikes · less touristy than Sintra</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Airbnb shortlist · live-verified for these dates</h4>
-    <div class="option">
-      <p class="opt-title"><span class="star">★</span> Casa Amarela · Setúbal</p>
-      <p class="opt-meta">3 BR · 6 single beds · 2 baths · Free cancellation</p>
-      <p class="opt-price">C$ 747 · 3 nights (best value)</p>
-      <a class="book" href="https://www.airbnb.com/rooms/1518063926940627746?check_in=2026-07-26&check_out=2026-07-29&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Victorian Beach House @Luisa Todi</p>
-      <p class="opt-meta">4 BR · 6 beds · 2 baths · Guest favorite · 4.8★</p>
-      <p class="opt-price">C$ 866 · 3 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/36367734?check_in=2026-07-26&check_out=2026-07-29&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Apartments Costa Azul — Arrábida seaside</p>
-      <p class="opt-meta">3 BR · 3 beds · 2 baths · Guest favorite</p>
-      <p class="opt-price">C$ 1,042 · 3 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/1047692386687205835?check_in=2026-07-26&check_out=2026-07-29&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Villa Chapeleira · Azeitão farm stay (premium)</p>
-      <p class="opt-meta">3 BR · 5 beds · 2.5 baths · Guest favorite · inside Arrábida park</p>
-      <p class="opt-price">C$ 1,809 · 3 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/37398977?check_in=2026-07-26&check_out=2026-07-29&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-  </div>
-</details>
-
-<!-- LEG 7 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">🚆</span>
-    <div class="leg-main">
-      <div class="leg-date">Wed Jul 29</div>
-      <div class="leg-title">Train Setúbal → Cascais (via Lisbon) <span class="badge open">Open</span></div>
-      <div class="leg-meta">~1h30 with one change · ~€30 for 5</div>
-    </div>
-  </summary>
-  <div class="body">
-    <p>Fertagus Setúbal → Lisbon Roma-Areeiro (50min) · transfer to Cais do Sodré · Cascais commuter line (40min)</p>
-    <a class="book" href="https://www.cp.pt/passageiros/en" target="_blank">Book on CP Comboios de Portugal</a>
-  </div>
-</details>
-
-<!-- LEG 8 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">🏛️</span>
-    <div class="leg-main">
-      <div class="leg-date">Wed Jul 29 – Sat Aug 1 · 3 nights</div>
-      <div class="leg-title">Cascais (Sintra coast) <span class="badge open">Open</span></div>
-      <div class="leg-meta">Sintra UNESCO palaces · Cabo da Roca cliffs · Ursa wild beach</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Airbnb shortlist · live-verified for these dates</h4>
-    <div class="option">
-      <p class="opt-title"><span class="star">★</span> Cozy Cascais 3 Bed 2 Bath</p>
-      <p class="opt-meta">3 BR · 3 queen beds · 2 baths · Guest favorite · 4.92★</p>
-      <p class="opt-price">C$ 1,112 · 3 nights (best value)</p>
-      <a class="book" href="https://www.airbnb.com/rooms/979619474371516827?check_in=2026-07-29&check_out=2026-08-01&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Gomes Freire Delight</p>
-      <p class="opt-meta">3 BR · 3 double beds · 2 baths · 4.82★ (102 reviews)</p>
-      <p class="opt-price">C$ 1,299 · 3 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/19718646?check_in=2026-07-29&check_out=2026-08-01&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Alto do Atlântico</p>
-      <p class="opt-meta">3 BR · 6 beds · Guest favorite · 4.83★</p>
-      <p class="opt-price">C$ 1,313 · 3 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/1616542166280690751?check_in=2026-07-29&check_out=2026-08-01&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Amazing sea view apartment · Estoril (premium)</p>
-      <p class="opt-meta">3 BR · 5 beds · 2 baths · Top guest favorite · next door to Cascais</p>
-      <p class="opt-price">C$ 1,762 · 3 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/16992128?check_in=2026-07-29&check_out=2026-08-01&adults=4&children=1" target="_blank">View on Airbnb</a>
-    </div>
-  </div>
-</details>
-
-<!-- LEG 9 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">✈️</span>
-    <div class="leg-main">
-      <div class="leg-date">Sat Aug 1</div>
-      <div class="leg-title">LIS → Paris ORY <span class="badge open">Open</span></div>
-      <div class="leg-meta">TAP Portugal direct · 2h25 · 5 pax</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Recommended</h4>
-    <div class="option">
-      <p class="opt-title"><span class="star">★</span> TAP direct · LIS → ORY · 3:25pm departure</p>
-      <p class="opt-meta">2h25 nonstop · Economy · leaves Lagos area mid-morning, evening home</p>
-      <p class="opt-price">C$ 1,240 total for 5 pax</p>
-      <a class="book" href="https://www.flytap.com/" target="_blank">Book on TAP</a>
-      <a class="book" href="https://www.ca.kayak.com/flights/LIS-ORY/2026-08-01/4adults/children-11?sort=price_a" target="_blank" style="background:var(--secondary);">Compare on Kayak</a>
-    </div>
-    <p style="font-size:12px; color:var(--slate); margin-top:8px;">Alt: 6:10pm same day (C$ 1,252) if you want a slower morning in Cascais.</p>
-  </div>
-</details>
-
-<!-- LEG 10 -->
-<details class="leg free">
-  <summary>
-    <span class="leg-icon">🏛️</span>
-    <div class="leg-main">
-      <div class="leg-date">Sat Aug 1 – Mon Aug 3 · 2 nights</div>
-      <div class="leg-title">Paris @ sister's (buffer) <span class="badge free">Free</span></div>
-      <div class="leg-meta">Decompress between Iberia and Poland legs</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="free-note"><strong>Free stay.</strong> Pivot day between southern Europe relaxation and the family-reunion-heavy Poland leg.</div>
-  </div>
-</details>
-
-<!-- LEG 11 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">✈️</span>
-    <div class="leg-main">
-      <div class="leg-date">Mon Aug 3</div>
-      <div class="leg-title">CDG → KRK Kraków <span class="badge open">Open</span></div>
-      <div class="leg-meta">Then drive to Zakopane (~2h) · 5 pax</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Options to compare</h4>
-    <div class="option">
-      <p class="opt-title">Air France / HOP nonstop CDG → KRK</p>
-      <p class="opt-meta">~2h30 · bags included · cleanest</p>
-      <p class="opt-price">~C$ 1,286 total for 5 pax</p>
-      <a class="book" href="https://www.airfrance.ca/" target="_blank">Check AF.ca</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">easyJet bare fare CDG → KRK</p>
-      <p class="opt-meta">2h30 nonstop · bag fees extra · cheapest</p>
-      <p class="opt-price">~C$ 608 base for 5 pax (+ bags)</p>
-      <a class="book" href="https://www.easyjet.com/" target="_blank">Check easyJet</a>
-    </div>
-    <p style="font-size:12px; color:var(--slate); margin-top:8px;">Need to also rent a 7-seater for the KRK→Zakopane drive (book at KRK airport, drop in Kraków on return).</p>
-  </div>
-</details>
-
-<!-- LEG 12 -->
-<details class="leg decided">
-  <summary>
-    <span class="leg-icon">🏔️</span>
-    <div class="leg-main">
-      <div class="leg-date">Mon Aug 3 – Fri Aug 7 · 4 nights</div>
-      <div class="leg-title">Zakopane · Aries Hotel &amp; SPA <span class="badge decided">Decided</span></div>
-      <div class="leg-meta">Tatra mountains · 5★ Krupówki location · Family Chalet + Premiere Double</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="locked-detail" style="background:#fdf3e1; border-color:var(--amber);">
-      <strong style="color:var(--amber);">Decided May 10 · not yet booked.</strong> Aries Hotel &amp; SPA, central Krupówki street. Family Chalet Suite + Premiere Double (split across 2 rooms because of 4-per-room cap). 4 nights bed-and-breakfast. ~C$ 2,365 for 5 pax.
-    </div>
-    <a class="book" href="https://www.ariesspa.pl/en/" target="_blank">Book on ariesspa.pl</a>
-    <h4>Alternative if Aries falls through</h4>
-    <ul>
-      <li>Willa Pod Wierzbami · 3BR · 4N · ~$1,838 (top Airbnb pick)</li>
-      <li>Domek Bliżej Nieba · 3BR · ~$1,208 (value)</li>
-    </ul>
-  </div>
-</details>
-
-<!-- LEG 13 -->
-<details class="leg free">
-  <summary>
-    <span class="leg-icon">🏠</span>
-    <div class="leg-main">
-      <div class="leg-date">Fri Aug 7 – Sun Aug 9 · 2 nights</div>
-      <div class="leg-title">Buchnik @ parents' · 80th + 90th party Aug 8 <span class="badge free">Free</span></div>
-      <div class="leg-meta">Wieslawa's parents' home · just N of Warsaw</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="free-note"><strong>Free stay.</strong> Saturday Aug 8 is the grandparents' joint 80th + 90th birthday party — the main family-reunion event of the trip.</div>
-  </div>
-</details>
-
-<!-- LEG 14 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">⛵</span>
-    <div class="leg-main">
-      <div class="leg-date">Sun Aug 9 – Thu Aug 13 · 4 nights</div>
-      <div class="leg-title">Mazury sailing · group of 15 <span class="badge open">Open</span></div>
-      <div class="leg-meta">4 families · cost split ÷3 (you, sister, Helenka)</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Airbnb shortlist · live-verified Aug 9-13, 15 guests</h4>
-    <div class="option">
-      <p class="opt-title"><span class="star">★</span> Vacation Home Kaszuny</p>
-      <p class="opt-meta">5 BR · 14 beds · 15 guests · 4.94★ · lake view · private pond + jetty · pets allowed</p>
-      <p class="opt-price">C$ 1,542 group total · ~C$ 514 your share · 4 nights</p>
-      <a class="book" href="https://www.airbnb.com/rooms/634655950690875617?check_in=2026-08-09&check_out=2026-08-13&adults=15" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Border Guard Station — Wiżajny</p>
-      <p class="opt-meta">5 BR · 19 beds · 15 guests · 5.0★ · 1941 renovated military post · hot tub · sauna · arcade</p>
-      <p class="opt-price">C$ 1,927 group total · ~C$ 642 your share</p>
-      <a class="book" href="https://www.airbnb.com/rooms/563758353666248164?check_in=2026-08-09&check_out=2026-08-13&adults=15" target="_blank">View on Airbnb</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">Srokowski Dwór · 19th-c. manor (premium)</p>
-      <p class="opt-meta">8 BR · 16 beds · 6.5 baths · 15 guests · 5.0★ · 450m² on 70ha · private beach + jetty · pizza oven</p>
-      <p class="opt-price">C$ 3,597 group total · ~C$ 1,199 your share</p>
-      <a class="book" href="https://www.airbnb.com/rooms/37513144?check_in=2026-08-09&check_out=2026-08-13&adults=15" target="_blank">View on Airbnb</a>
-    </div>
-    <p style="font-size:12px; color:var(--slate); margin-top:8px;">Yacht-charter option (sailing on the lakes themselves) still not researched — let me know if you want to swap a stay for a multi-day charter.</p>
-  </div>
-</details>
-
-<!-- LEG 15 -->
-<details class="leg free">
-  <summary>
-    <span class="leg-icon">🏠</span>
-    <div class="leg-main">
-      <div class="leg-date">Thu Aug 13 – Fri Aug 14 · 1 night</div>
-      <div class="leg-title">Buchnik @ parents' (return leg) <span class="badge free">Free</span></div>
-      <div class="leg-meta">Pit-stop before WAW flight</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="free-note"><strong>Free stay.</strong> One night to repack and rest before the early WAW→CDG flight.</div>
-  </div>
-</details>
-
-<!-- LEG 16 -->
-<details class="leg open">
-  <summary>
-    <span class="leg-icon">✈️</span>
-    <div class="leg-main">
-      <div class="leg-date">Fri Aug 14</div>
-      <div class="leg-title">WAW → CDG <span class="badge open">Open</span></div>
-      <div class="leg-meta">Direct ~2h35 · AF or LOT · 5 pax</div>
-    </div>
-  </summary>
-  <div class="body">
-    <h4>Options to compare</h4>
-    <div class="option">
-      <p class="opt-title">Air France direct WAW → CDG</p>
-      <p class="opt-meta">~2h35 · bags included</p>
-      <p class="opt-price">~C$ 1,500 total for 5 pax</p>
-      <a class="book" href="https://www.airfrance.ca/" target="_blank">Check AF.ca</a>
-    </div>
-    <div class="option">
-      <p class="opt-title">LOT Polish Airlines direct WAW → CDG</p>
-      <p class="opt-meta">~2h35 · competitive with AF</p>
-      <p class="opt-price">~C$ 1,200–1,500 total for 5 pax</p>
-      <a class="book" href="https://www.lot.com/" target="_blank">Check LOT</a>
-    </div>
-  </div>
-</details>
-
-<!-- LEG 17 -->
-<details class="leg free">
-  <summary>
-    <span class="leg-icon">🏛️</span>
-    <div class="leg-main">
-      <div class="leg-date">Fri Aug 14 – Sat Aug 15 · 1 night</div>
-      <div class="leg-title">Paris @ sister's (decompress) <span class="badge free">Free</span></div>
-      <div class="leg-meta">Final night before flight home</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="free-note"><strong>Free stay.</strong> Repack, last walks in Paris.</div>
-  </div>
-</details>
-
-<!-- LEG 18 -->
-<details class="leg locked">
-  <summary>
-    <span class="leg-icon">✈️</span>
-    <div class="leg-main">
-      <div class="leg-date">Sat Aug 15</div>
-      <div class="leg-title">CDG → YOW (return) <span class="badge locked">Locked</span></div>
-      <div class="leg-meta">Air France direct · part of Jul 18 round-trip ticket</div>
-    </div>
-  </summary>
-  <div class="body">
-    <div class="locked-detail">
-      <strong>Booked.</strong> Return leg of the Jul 18 round-trip AF ticket. Direct CDG → YOW. Same PNR.
-    </div>
-  </div>
-</details>
-
-<footer class="foot">
-  Updated 2026-05-16 by Morgan ·
-  To update: tell Morgan on Telegram things like "<code>lock Lagos Airbnb to Sea Apartment</code>", "<code>show flight options for Aug 3 to Krakow</code>", "<code>add yacht charter option to Mazury</code>".
-  <br>Repo: <a href="https://github.com/JohnKotowski/europe-trip-2026" style="color:var(--primary-dark);">github.com/JohnKotowski/europe-trip-2026</a>
-</footer>
+  <p class="foot">
+    Updated 2026-05-16 by Morgan ·
+    To update: tell Morgan things like "<code>lock Lagos to Sea Apartment</code>" or "<code>add Sintra attractions</code>".
+    <br><a href="https://github.com/JohnKotowski/europe-trip-2026">github.com/JohnKotowski/europe-trip-2026</a>
+  </p>
 
 </div>
 </body>
